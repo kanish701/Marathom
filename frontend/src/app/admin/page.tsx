@@ -1,21 +1,68 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import {
   Trophy, IndianRupee, UserCheck, ShieldAlert,
   Users, Layers, Settings, FileText, QrCode, Mail, PlusCircle, Check
 } from 'lucide-react';
 
+interface CategoryBreakdown {
+  id: string;
+  name: string;
+  price: number;
+  capacity: number;
+  available: number;
+  confirmed: number;
+  locked: number;
+}
+
+interface Stats {
+  totalConfirmed: number;
+  totalRevenue: number;
+  checkedInCount: number;
+  categoryBreakdown: CategoryBreakdown[];
+}
+
+interface RecentRunner {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  categoryId: string;
+  category: {
+    name: string;
+  };
+  bibNumber: string | null;
+  status: string;
+  paymentMethod: string | null;
+  paymentId: string | null;
+  checkedIn: boolean;
+  medicalDetails?: string | null;
+  emergencyName?: string;
+  emergencyPhone?: string;
+  tshirtSize?: string;
+}
+
+interface WhatsAppLog {
+  id: string;
+  runnerName: string;
+  phone: string;
+  sentAt: string;
+  status: string;
+  message: string;
+  qrCode: string | null;
+}
+
 export default function Admin() {
   const [activeTab, setActiveTab] = useState('overview'); // overview, offline, checkin, whatsapp
-  const [stats, setStats] = useState({
+  const [stats, setStats] = useState<Stats>({
     totalConfirmed: 0,
     totalRevenue: 0,
     checkedInCount: 0,
     categoryBreakdown: []
   });
-  const [recentRunners, setRecentRunners] = useState([]);
-  const [whatsappLogs, setWhatsappLogs] = useState([]);
+  const [recentRunners, setRecentRunners] = useState<RecentRunner[]>([]);
+  const [whatsappLogs, setWhatsappLogs] = useState<WhatsAppLog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   
@@ -37,7 +84,7 @@ export default function Admin() {
   
   // Check-In state
   const [checkInQuery, setCheckInQuery] = useState('');
-  const [scannedRunner, setScannedRunner] = useState(null);
+  const [scannedRunner, setScannedRunner] = useState<RecentRunner | null>(null);
   const [checkInMessage, setCheckInMessage] = useState('');
   const [checkInError, setCheckInError] = useState('');
 
@@ -72,13 +119,13 @@ export default function Admin() {
   }, []);
 
   // Handle Offline Form Input
-  const handleOfflineChange = (e) => {
+  const handleOfflineChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setOfflineForm(prev => ({ ...prev, [name]: value }));
   };
 
   // Submit Offline Form
-  const handleOfflineSubmit = async (e) => {
+  const handleOfflineSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setOfflineSuccess('');
     setError('');
@@ -111,13 +158,13 @@ export default function Admin() {
         paymentId: ''
       });
       fetchData();
-    } catch (err) {
-      setError(err.message);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred');
     }
   };
 
   // Submit Check-In
-  const handleCheckInSubmit = async (e) => {
+  const handleCheckInSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setCheckInMessage('');
     setCheckInError('');
@@ -139,14 +186,14 @@ export default function Admin() {
       setScannedRunner(data.runner);
       setCheckInMessage(data.message || 'Check-in completed!');
       fetchData();
-    } catch (err) {
-      setCheckInError(err.message);
+    } catch (err: any) {
+      setCheckInError(err.message || 'Check-in failed');
       setScannedRunner(null);
     }
   };
 
   // Trigger simulated Scan
-  const simulateQRScan = (runner) => {
+  const simulateQRScan = (runner: RecentRunner) => {
     setCheckInQuery(runner.bibNumber || runner.id);
     setCheckInMessage('');
     setCheckInError('');
@@ -162,8 +209,8 @@ export default function Admin() {
       const data = await res.json();
       alert(`Recovery check executed!\n${data.message}`);
       fetchData();
-    } catch (err) {
-      alert('Error triggering recovery: ' + err.message);
+    } catch (err: any) {
+      alert('Error triggering recovery: ' + (err.message || 'Unknown error'));
     }
   };
 
@@ -344,7 +391,7 @@ export default function Admin() {
                   <tbody>
                     {recentRunners.length === 0 ? (
                       <tr>
-                        <td colSpan="7" style={{ textAlign: 'center', color: 'var(--text-muted)' }}>No registrations found.</td>
+                        <td colSpan={7} style={{ textAlign: 'center', color: 'var(--text-muted)' }}>No registrations found.</td>
                       </tr>
                     ) : (
                       recentRunners.map(r => (
