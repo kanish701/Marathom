@@ -29,12 +29,7 @@ export default function ConfirmationSection({
   formData
 }: ConfirmationSectionProps) {
   return (
-    <div style={{
-      background: '#ffffff',
-      border: '1px solid #e2e8f0',
-      borderRadius: '24px',
-      padding: '56px 40px',
-      boxShadow: '0 10px 30px -10px rgba(0,0,0,0.05)',
+    <div className="responsive-form-card" style={{
       textAlign: 'center',
       maxWidth: '650px',
       margin: '0 auto'

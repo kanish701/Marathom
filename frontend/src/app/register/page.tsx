@@ -220,13 +220,7 @@ export default function Register() {
       }}>
         
         {step === 'FORM' && (
-          <div style={{
-            background: '#ffffff',
-            border: '1px solid #e2e8f0',
-            borderRadius: '24px',
-            padding: '48px 40px',
-            boxShadow: '0 20px 40px -10px rgba(0,0,0,0.05)'
-          }}>
+          <div className="responsive-form-card">
             
             {/* Minimalist Progress Header */}
             <div style={{ 
@@ -306,15 +300,17 @@ export default function Register() {
 
         {/* --- CHECKOUT & SLOT LOCKING --- */}
         {step === 'CHECKOUT' && (
-          <CheckoutSection
-            formData={formData}
-            selectedCategory={selectedCategory}
-            timeLeft={timeLeft}
-            formatTime={formatTime}
-            onCancel={() => setStep('FORM')}
-            onSubmit={handlePaymentSubmit}
-            loading={loading}
-          />
+          <div className="responsive-form-card">
+            <CheckoutSection
+              formData={formData}
+              selectedCategory={selectedCategory}
+              timeLeft={timeLeft}
+              formatTime={formatTime}
+              onCancel={() => setStep('FORM')}
+              onSubmit={handlePaymentSubmit}
+              loading={loading}
+            />
+          </div>
         )}
 
         {/* --- CONFIRMATION --- */}

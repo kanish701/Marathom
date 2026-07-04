@@ -26,19 +26,16 @@ export default function HeroSection() {
         WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)'
       }} />
 
-      <div style={{ 
+      <div className="responsive-hero-layout" style={{ 
         maxWidth: '1280px', 
         margin: '0 auto', 
         position: 'relative', 
         zIndex: 1,
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
         gap: '40px'
       }}>
         
         {/* Left: Monolithic Typography & Impact Ticker */}
-        <div style={{ flex: '1 1 500px', zIndex: 2 }}>
+        <div className="responsive-hero-left">
           
           {/* Status Badge */}
           <div style={{
@@ -127,7 +124,7 @@ export default function HeroSection() {
             overflow: 'hidden'
           }}>
             
-            <div style={{ padding: '24px', borderRight: '1px solid #e2e8f0' }}>
+            <div className="responsive-ticker-item">
               <div style={{ color: '#10b981', fontWeight: 900, fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <TreePine size={24} /> 12,450+
               </div>
@@ -136,7 +133,7 @@ export default function HeroSection() {
               </div>
             </div>
             
-            <div style={{ padding: '24px', borderRight: '1px solid #e2e8f0' }}>
+            <div className="responsive-ticker-item">
               <div style={{ color: '#3b82f6', fontWeight: 900, fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Users size={24} /> 3,200 <span style={{ fontSize: '1rem', color: '#94a3b8', fontWeight: 700 }}>/ 5k</span>
               </div>
@@ -145,7 +142,7 @@ export default function HeroSection() {
               </div>
             </div>
             
-            <div style={{ padding: '24px' }}>
+            <div className="responsive-ticker-item" style={{ borderRight: 'none' }}>
               <div style={{ color: '#f59e0b', fontWeight: 900, fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Award size={24} /> Rs. 15L
               </div>
@@ -158,16 +155,13 @@ export default function HeroSection() {
         </div>
 
         {/* Right: Illustration Graphic */}
-        <div style={{ flex: '1 1 500px', display: 'flex', justifyContent: 'flex-end', position: 'relative' }}>
+        <div className="responsive-hero-right">
            <img 
-             src="/image_908783.jpg" 
+             src="/hero-marathon.png" 
              alt="Marathon Event Illustration" 
+             className="responsive-illustration-img"
              style={{
-               width: '100%',
                maxWidth: '850px',
-               height: 'auto',
-               objectFit: 'contain',
-               transform: 'translateX(5%)', // Creates the asymmetrical bleed effect seen in the reference
                filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.04))'
              }}
            />

@@ -222,7 +222,7 @@ export default function Admin() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         
         {/* Header Title */}
-        <div className="flex-between" style={{ marginBottom: '40px' }}>
+        <div className="flex-between responsive-admin-header" style={{ marginBottom: '40px', gap: '16px', flexWrap: 'wrap' }}>
           <div>
             <h1 className="text-gradient" style={{ fontSize: '2.5rem', fontWeight: 800 }}>Admin Organizer Panel</h1>
             <p style={{ color: 'var(--text-secondary)' }}>Manage registrations, monitor slot locks, and issue runner kits.</p>

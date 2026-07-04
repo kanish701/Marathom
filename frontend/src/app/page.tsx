@@ -100,10 +100,10 @@ export default function Home() {
           WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)'
         }} />
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', flex: 1 }}>
+        <div className="responsive-hero-layout" style={{ flex: 1 }}>
           
           {/* Left: Monolithic Typography & CTA */}
-          <div style={{ flex: '1 1 450px', paddingRight: '40px', zIndex: 2 }}>
+          <div className="responsive-hero-left">
             <h1 style={{ 
               fontSize: 'clamp(4.5rem, 8vw, 7rem)', 
               fontWeight: 900, 
@@ -140,16 +140,13 @@ export default function Home() {
           </div>
 
           {/* Right/Bottom: Runner Illustration Area */}
-          <div style={{ flex: '1 1 600px', position: 'relative', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: '40px' }}>
+          <div className="responsive-hero-right" style={{ alignItems: 'flex-end' }}>
             <img 
               src="/hero-marathon.png" 
               alt="Marathon Runners Illustration" 
+              className="responsive-illustration-img"
               style={{
-                width: '100%',
                 maxWidth: '900px',
-                height: 'auto',
-                objectFit: 'contain',
-                transform: 'translateX(5%)',
                 filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.05))'
               }}
             />
@@ -234,7 +231,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
             {categories.map((cat) => {
               const capacityPercent = Math.min(100, Math.round(((cat.capacity - cat.available) / cat.capacity) * 100));
               const isSoldOut = cat.available === 0;
