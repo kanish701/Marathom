@@ -41,6 +41,11 @@ export default function CheckoutSection({
   const [upiTxnId, setUpiTxnId] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
 
+  // Card input states to avoid uncontrolled-to-controlled warnings
+  const [cardNumber, setCardNumber] = useState('4000 1234 5678 9010');
+  const [expiryDate, setExpiryDate] = useState('12/28');
+  const [cvv, setCvv] = useState('123');
+
   // Reusable label style for the premium minimalist look
   const labelStyle = {
     display: 'block', 
@@ -54,7 +59,10 @@ export default function CheckoutSection({
 
   const inputStyle = {
     width: '100%',
-    padding: '16px',
+    paddingTop: '16px',
+    paddingBottom: '16px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
@@ -257,9 +265,11 @@ export default function CheckoutSection({
               </label>
               <div style={{ position: 'relative' }}>
                 <input
+                  key="cardNumber"
                   type="text"
                   maxLength={19}
-                  defaultValue="4000 1234 5678 9010"
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
                   required
                   style={{ ...inputStyle, paddingLeft: '48px', fontFamily: 'monospace', fontSize: '1.1rem', letterSpacing: '2px' }}
                 />
@@ -271,9 +281,11 @@ export default function CheckoutSection({
               <div>
                 <label style={labelStyle}>Expiry Date</label>
                 <input
+                  key="expiryDate"
                   type="text"
                   maxLength={5}
-                  defaultValue="12/28"
+                  value={expiryDate}
+                  onChange={(e) => setExpiryDate(e.target.value)}
                   required
                   style={{ ...inputStyle, textAlign: 'center', fontFamily: 'monospace', fontSize: '1.1rem' }}
                 />
@@ -281,9 +293,11 @@ export default function CheckoutSection({
               <div>
                 <label style={labelStyle}>CVV</label>
                 <input
+                  key="cvv"
                   type="password"
                   maxLength={3}
-                  defaultValue="123"
+                  value={cvv}
+                  onChange={(e) => setCvv(e.target.value)}
                   required
                   style={{ ...inputStyle, textAlign: 'center', fontFamily: 'monospace', fontSize: '1.1rem', letterSpacing: '2px' }}
                 />
@@ -298,6 +312,7 @@ export default function CheckoutSection({
               <label style={labelStyle}>Option 1: Request Payment via UPI ID</label>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <input
+                  key="upiId"
                   type="text"
                   value={upiId}
                   onChange={(e) => setUpiId(e.target.value)}
@@ -379,6 +394,7 @@ export default function CheckoutSection({
             <div>
               <label style={labelStyle}>Option 2: Enter UPI Transaction ID (Reference No.)</label>
               <input
+                key="upiTxnId"
                 type="text"
                 maxLength={12}
                 value={upiTxnId}

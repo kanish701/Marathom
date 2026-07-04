@@ -48,7 +48,10 @@ export default function PersonalDetailsStep({
 
   const inputStyle = {
     width: '100%',
-    padding: '16px',
+    paddingTop: '16px',
+    paddingBottom: '16px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
