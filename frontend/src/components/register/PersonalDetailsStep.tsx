@@ -48,10 +48,10 @@ export default function PersonalDetailsStep({
 
   const inputStyle = {
     width: '100%',
-    paddingTop: '16px',
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '14px',
+    paddingRight: '14px',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
@@ -80,7 +80,7 @@ export default function PersonalDetailsStep({
                 style={{
                   border: `2px solid ${isSelected ? '#10b981' : '#e2e8f0'}`,
                   background: isSelected ? '#f0fdf4' : '#ffffff',
-                  padding: '24px',
+                  padding: '16px',
                   borderRadius: '16px',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -93,8 +93,8 @@ export default function PersonalDetailsStep({
                     <CheckCircle size={20} strokeWidth={2.5} />
                   </div>
                 )}
-                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>{c.name}</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#10b981', margin: '8px 0 4px', letterSpacing: '-0.5px' }}>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>{c.name}</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#10b981', margin: '6px 0 2px', letterSpacing: '-0.5px' }}>
                   Rs. {c.price}
                 </div>
                 <div style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 500 }}>
@@ -201,7 +201,7 @@ export default function PersonalDetailsStep({
         type="submit"
         style={{
           width: '100%',
-          padding: '18px',
+          padding: '14px',
           background: '#10b981',
           color: 'white',
           border: 'none',

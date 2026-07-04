@@ -212,7 +212,7 @@ export default function Register() {
       {/* --- MAIN CONTENT CONTAINER --- */}
       <div style={{ 
         maxWidth: '750px', 
-        margin: '-60px auto 0', // Pulls the form up slightly over the hero section
+        margin: '-80px auto 0', // Pulls the form up slightly over the hero section
         padding: '0 24px', 
         position: 'relative', 
         zIndex: 10 
@@ -226,8 +226,8 @@ export default function Register() {
               display: 'flex', 
               alignItems: 'flex-end', 
               justifyContent: 'space-between', 
-              marginBottom: '40px', 
-              paddingBottom: '24px', 
+              marginBottom: '24px', 
+              paddingBottom: '16px', 
               borderBottom: '1px solid #f1f5f9' 
             }}>
               <div>

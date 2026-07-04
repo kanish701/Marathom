@@ -38,10 +38,10 @@ export default function MedicalSafetyStep({
   // Reusable input style
   const inputStyle = {
     width: '100%',
-    paddingTop: '16px',
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '14px',
+    paddingRight: '14px',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
@@ -59,7 +59,7 @@ export default function MedicalSafetyStep({
       <div style={{
         background: '#f0fdf4',
         border: '1px solid #bbf7d0',
-        padding: '20px',
+        padding: '12px 16px',
         borderRadius: '16px',
         display: 'flex',
         alignItems: 'flex-start',
@@ -128,7 +128,7 @@ export default function MedicalSafetyStep({
           type="button"
           onClick={onBack}
           style={{
-            padding: '18px 24px',
+            padding: '14px 20px',
             background: '#ffffff',
             border: '2px solid #e2e8f0',
             color: '#475569',
@@ -152,7 +152,7 @@ export default function MedicalSafetyStep({
           disabled={loading}
           style={{
             flex: 1,
-            padding: '18px',
+            padding: '14px',
             background: '#10b981',
             color: '#ffffff',
             border: 'none',

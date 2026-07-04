@@ -41,19 +41,19 @@ export default function ConfirmationSection({
         background: '#f0fdf4',
         border: '1px solid #bbf7d0',
         color: '#10b981',
-        padding: '24px',
+        padding: '16px',
         borderRadius: '50%',
-        marginBottom: '24px',
+        marginBottom: '16px',
         boxShadow: '0 4px 20px -5px rgba(16, 185, 129, 0.15)'
       }}>
-        <CheckCircle size={48} strokeWidth={2} />
+        <CheckCircle size={36} strokeWidth={2} />
       </div>
 
       <h2 style={{ 
-        fontSize: '2.5rem', 
+        fontSize: '1.75rem', 
         fontWeight: 900, 
         color: '#0f172a', 
-        marginBottom: '12px', 
+        marginBottom: '8px', 
         letterSpacing: '-0.5px' 
       }}>
         You're In, {confirmedRunner.name}!
@@ -61,11 +61,11 @@ export default function ConfirmationSection({
       
       <p style={{ 
         color: '#64748b', 
-        marginBottom: '40px', 
-        fontSize: '1.05rem', 
+        marginBottom: '20px', 
+        fontSize: '0.95rem', 
         lineHeight: 1.6, 
         maxWidth: '500px', 
-        margin: '0 auto 40px' 
+        margin: '0 auto 20px' 
       }}>
         Your payment has been reconciled. Your trees are being planted and your bib number is officially reserved.
       </p>
@@ -75,19 +75,19 @@ export default function ConfirmationSection({
         background: '#f8fafc',
         border: '1px solid #e2e8f0',
         borderRadius: '20px',
-        padding: '32px',
+        padding: '20px',
         maxWidth: '450px',
-        margin: '0 auto 40px',
+        margin: '0 auto 20px',
         position: 'relative',
         boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
       }}>
-        <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#10b981', letterSpacing: '2px', textTransform: 'uppercase' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#10b981', letterSpacing: '2px', textTransform: 'uppercase' }}>
           Official Bib Number
         </div>
-        <div style={{ fontSize: '3.5rem', fontWeight: 900, color: '#0f172a', fontFamily: 'monospace', margin: '12px 0', letterSpacing: '2px' }}>
+        <div style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', fontFamily: 'monospace', margin: '8px 0', letterSpacing: '2px' }}>
           {confirmedRunner.bibNumber}
         </div>
-        <div style={{ fontSize: '0.95rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+        <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
           {selectedCategory?.name}
         </div>
       </div>
@@ -96,10 +96,10 @@ export default function ConfirmationSection({
       <div style={{
         background: '#f8fafc',
         borderRadius: '20px',
-        padding: '24px',
+        padding: '16px',
         textAlign: 'left',
         maxWidth: '500px',
-        margin: '0 auto 40px',
+        margin: '0 auto 20px',
         border: '1px solid #e2e8f0',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#10b981', fontSize: '0.75rem', fontWeight: 800, marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -127,13 +127,14 @@ export default function ConfirmationSection({
       {/* Pill-shaped Action Buttons */}
       <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
         <Link href="/" style={{
-          padding: '16px 32px',
+          padding: '12px 24px',
           background: '#ffffff',
           border: '2px solid #e2e8f0',
           color: '#475569',
           textDecoration: 'none',
           borderRadius: '9999px',
           fontWeight: 700,
+          fontSize: '0.95rem',
           transition: 'all 0.2s ease'
         }}
         onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#f8fafc'; e.currentTarget.style.borderColor = '#cbd5e1'; }}
@@ -143,13 +144,14 @@ export default function ConfirmationSection({
         </Link>
         
         <Link href="/admin" style={{
-          padding: '16px 32px',
+          padding: '12px 24px',
           background: '#10b981',
           border: '2px solid #10b981',
           color: '#ffffff',
           textDecoration: 'none',
           borderRadius: '9999px',
           fontWeight: 700,
+          fontSize: '0.95rem',
           boxShadow: '0 10px 25px -5px rgba(16, 185, 129, 0.3)',
           transition: 'all 0.2s ease'
         }}

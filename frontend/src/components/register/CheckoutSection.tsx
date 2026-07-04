@@ -59,10 +59,10 @@ export default function CheckoutSection({
 
   const inputStyle = {
     width: '100%',
-    paddingTop: '16px',
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '14px',
+    paddingRight: '14px',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
@@ -147,7 +147,7 @@ export default function CheckoutSection({
       <div style={{
         background: '#fffbeb',
         border: '1px solid #fde68a',
-        padding: '16px 24px',
+        padding: '12px 18px',
         borderRadius: '16px',
         color: '#d97706',
         display: 'flex',
@@ -234,7 +234,7 @@ export default function CheckoutSection({
         background: '#f8fafc',
         border: '1px solid #e2e8f0',
         borderRadius: '16px',
-        padding: '24px 32px',
+        padding: '16px 20px',
         boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', fontSize: '0.95rem' }}>
@@ -277,7 +277,7 @@ export default function CheckoutSection({
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '32px' }}>
               <div>
                 <label style={labelStyle}>Expiry Date</label>
                 <input
@@ -415,7 +415,7 @@ export default function CheckoutSection({
             type="button"
             onClick={onCancel}
             style={{
-              padding: '18px 24px',
+              padding: '14px 20px',
               background: '#ffffff',
               border: '2px solid #e2e8f0',
               color: '#475569',
@@ -436,7 +436,7 @@ export default function CheckoutSection({
             disabled={loading}
             style={{
               flex: 1,
-              padding: '18px',
+              padding: '14px',
               background: '#10b981',
               color: '#ffffff',
               border: 'none',

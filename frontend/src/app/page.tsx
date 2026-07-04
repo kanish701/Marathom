@@ -82,12 +82,12 @@ export default function Home() {
       <section style={{ 
         position: 'relative', 
         zIndex: 1, 
-        padding: '80px 24px 0', 
+        padding: '48px 24px 0', 
         maxWidth: '1280px', 
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '75vh'
+        minHeight: '70vh'
       }}>
         
         {/* Subtle dot matrix background for editorial depth */}
@@ -105,11 +105,11 @@ export default function Home() {
           {/* Left: Monolithic Typography & CTA */}
           <div className="responsive-hero-left">
             <h1 style={{ 
-              fontSize: 'clamp(4.5rem, 8vw, 7rem)', 
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
               fontWeight: 900, 
               lineHeight: 0.95, 
               letterSpacing: '-0.04em', 
-              marginBottom: '40px', 
+              marginBottom: '20px', 
               color: '#0f172a'
             }}>
               Run!<br />
@@ -117,7 +117,7 @@ export default function Home() {
               <span style={{ color: '#10b981' }}>Conquer!</span>
             </h1>
             
-            <p style={{ fontSize: '1.125rem', color: '#64748b', maxWidth: '420px', marginBottom: '40px', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1.05rem', color: '#64748b', maxWidth: '420px', marginBottom: '24px', lineHeight: 1.6 }}>
               Join 5,000+ athletes. Secure your spot in the ultimate high-performance coastal marathon.
             </p>
 
@@ -127,10 +127,10 @@ export default function Home() {
               gap: '12px',
               backgroundColor: '#10b981',
               color: '#ffffff',
-              padding: '18px 48px',
+              padding: '14px 32px',
               borderRadius: '9999px',
               fontWeight: 700,
-              fontSize: '1.1rem',
+              fontSize: '1rem',
               letterSpacing: '0.5px',
               textDecoration: 'none',
               boxShadow: '0 10px 25px -5px rgba(16, 185, 129, 0.4)'
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
 
           {/* Right/Bottom: Runner Illustration Area */}
-          <div className="responsive-hero-right" style={{ alignItems: 'flex-end' }}>
+          <div className="responsive-hero-right" style={{ alignItems: 'flex-end', marginTop: '20px' }}>
             <img 
               src="/hero-marathon.png" 
               alt="Marathon Runners Illustration" 
@@ -217,15 +217,15 @@ export default function Home() {
       </section>
 
       {/* --- CATEGORIES GRID --- */}
-      <section id="categories" style={{ padding: '100px 24px', backgroundColor: '#f8fafc', position: 'relative', zIndex: 1 }}>
+      <section id="categories" style={{ padding: '60px 24px', backgroundColor: '#f8fafc', position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           
-          <div style={{ marginBottom: '64px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ marginBottom: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-1px', margin: '0 0 12px 0' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.5px', margin: '0 0 8px 0' }}>
                 Choose Your Distance
               </h2>
-              <p style={{ color: '#64748b', fontSize: '1.1rem', margin: 0, maxWidth: '600px' }}>
+              <p style={{ color: '#64748b', fontSize: '1rem', margin: 0, maxWidth: '600px' }}>
                 Slots lock dynamically during checkout to prevent overbooking.
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function Home() {
                   background: '#ffffff',
                   border: '1px solid #e2e8f0',
                   borderRadius: '24px',
-                  padding: '40px',
+                  padding: '28px',
                   display: 'flex', 
                   flexDirection: 'column',
                   position: 'relative'
@@ -250,7 +250,7 @@ export default function Home() {
                   
                   {isSellingFast && (
                     <div style={{
-                      position: 'absolute', top: '-12px', right: '32px',
+                      position: 'absolute', top: '-12px', right: '28px',
                       background: '#fef2f2', border: '1px solid #fecaca', color: '#ef4444',
                       padding: '4px 12px', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px',
                       display: 'flex', alignItems: 'center', gap: '4px', boxShadow: '0 4px 6px -1px rgba(239,68,68,0.1)'
@@ -259,31 +259,31 @@ export default function Home() {
                     </div>
                   )}
                   
-                  <h3 style={{ fontSize: '1.75rem', fontWeight: 800, margin: '0 0 8px 0', color: '#0f172a' }}>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0 0 8px 0', color: '#0f172a' }}>
                     {cat.name}
                   </h3>
                   
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', margin: '0 0 40px 0' }}>
-                    <span style={{ fontSize: '3.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-2px', lineHeight: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', margin: '0 0 20px 0' }}>
+                    <span style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-1px', lineHeight: 1 }}>
                       Rs. {cat.price}
                     </span>
-                    <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>/ Runner</span>
+                    <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>/ Runner</span>
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1, margin: '0 0 48px 0' }}>
-                    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', fontSize: '1rem', color: '#334155', fontWeight: 600 }}>
-                      <div style={{ background: '#f8fafc', padding: '8px', borderRadius: '8px' }}><Clock size={18} color="#10b981" /></div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1, margin: '0 0 30px 0' }}>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '0.95rem', color: '#334155', fontWeight: 600 }}>
+                      <div style={{ background: '#f8fafc', padding: '6px', borderRadius: '6px' }}><Clock size={16} color="#10b981" /></div>
                       Starts at {cat.startTime}
                     </div>
-                    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', fontSize: '1rem', color: '#334155', fontWeight: 600 }}>
-                      <div style={{ background: '#f8fafc', padding: '8px', borderRadius: '8px' }}><Target size={18} color="#10b981" /></div>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '0.95rem', color: '#334155', fontWeight: 600 }}>
+                      <div style={{ background: '#f8fafc', padding: '6px', borderRadius: '6px' }}><Target size={16} color="#10b981" /></div>
                       Official BIB & Timing Chip
                     </div>
                   </div>
 
                   {/* Enhanced Progress Bar */}
-                  <div style={{ margin: '0 0 40px 0' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', fontWeight: 800, color: isSoldOut ? '#ef4444' : '#0f172a', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ margin: '0 0 24px 0' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', fontWeight: 800, color: isSoldOut ? '#ef4444' : '#0f172a', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       <span>{isSoldOut ? 'Sold Out' : `${cat.available} Slots Left`}</span>
                       <span style={{ color: '#64748b' }}>{capacityPercent}% Filled</span>
                     </div>
@@ -309,12 +309,12 @@ export default function Home() {
                     style={{
                       background: isSoldOut ? '#f1f5f9' : '#10b981',
                       color: isSoldOut ? '#94a3b8' : '#ffffff',
-                      padding: '20px', 
+                      padding: '14px', 
                       width: '100%', 
                       textAlign: 'center', 
                       borderRadius: '9999px',
                       fontWeight: 700, 
-                      fontSize: '1rem', 
+                      fontSize: '0.95rem', 
                       letterSpacing: '0.5px',
                       textDecoration: 'none',
                       textTransform: 'uppercase',

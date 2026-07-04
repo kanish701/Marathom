@@ -215,7 +215,7 @@ export default function Admin() {
   };
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', padding: '40px 0 100px 0' }}>
+    <div style={{ position: 'relative', overflow: 'hidden', padding: '24px 0 60px 0' }}>
       <div className="glowing-bg glow-purple" />
       <div className="glowing-bg glow-cyan" />
 
@@ -262,7 +262,7 @@ export default function Admin() {
           display: 'flex',
           gap: '8px',
           borderBottom: '1px solid var(--border)',
-          marginBottom: '30px',
+          marginBottom: '20px',
           paddingBottom: '2px',
           overflowX: 'auto'
         }}>
@@ -448,7 +448,7 @@ export default function Admin() {
 
         {/* Tab View: Offline Entries Desk */}
         {activeTab === 'offline' && (
-          <div className="glass" style={{ padding: '40px', borderRadius: '16px', maxWidth: '650px', margin: '0 auto' }}>
+          <div className="glass" style={{ padding: '24px', borderRadius: '16px', maxWidth: '650px', margin: '0 auto' }}>
             <h2 className="text-gradient" style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '8px' }}>
               Offline Registration Desk
             </h2>
@@ -652,7 +652,7 @@ export default function Admin() {
 
         {/* Tab View: Kit Check-In Desk */}
         {activeTab === 'checkin' && (
-          <div className="glass" style={{ padding: '40px', borderRadius: '16px', maxWidth: '600px', margin: '0 auto' }}>
+          <div className="glass" style={{ padding: '24px', borderRadius: '16px', maxWidth: '600px', margin: '0 auto' }}>
             <h2 className="text-gradient" style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '8px' }}>
               Kit Collection Desk
             </h2>
