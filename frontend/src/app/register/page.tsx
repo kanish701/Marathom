@@ -149,8 +149,7 @@ export default function Register() {
     }
   };
 
-  const handlePaymentSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handlePaymentSubmit = async (paymentMethod: string, paymentId: string) => {
     setError('');
     setLoading(true);
 
@@ -160,8 +159,8 @@ export default function Register() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           runnerId,
-          paymentId: `PAY-${Math.floor(100000 + Math.random() * 900000)}`,
-          paymentMethod: 'ONLINE'
+          paymentId,
+          paymentMethod
         })
       });
 
