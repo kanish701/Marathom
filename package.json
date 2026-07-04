@@ -1,0 +1,8 @@
+{
+  "name": "marathon-monorepo",
+  "private": true,
+  "description": "Marathon registration monorepo setup",
+  "engines": {
+    "node": ">=18"
+  }
+}
