@@ -1,0 +1,57 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id        String   @id
+  name      String
+  price     Float
+  capacity  Int
+  startTime String
+  runners   Runner[]
+}
+
+model Runner {
+  id             String    @id @default(uuid())
+  name           String
+  email          String
+  phone          String
+  gender         String
+  tshirtSize     String
+  medicalDetails String?
+  emergencyName  String
+  emergencyPhone String
+  bibNumber      String?   @unique
+  status         String    @default("PENDING") // PENDING, CONFIRMED, EXPIRED
+  paymentMethod  String?   // ONLINE, CASH, POS, UPI
+  paymentId      String?
+  registeredAt   DateTime  @default(now())
+  checkedIn      Boolean   @default(false)
+  checkedInAt    DateTime?
+  categoryId     String
+  category       Category  @relation(fields: [categoryId], references: [id])
+  slotLock       SlotLock?
+}
+
+model SlotLock {
+  id        String   @id @default(uuid())
+  runnerId  String   @unique
+  runner    Runner   @relation(fields: [runnerId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
+
+model WhatsAppLog {
+  id         String   @id @default(uuid())
+  runnerName String
+  phone      String
+  message    String
+  sentAt     DateTime @default(now())
+  status     String
+  qrCode     String?  // Base64 QR code image data URI
+}
